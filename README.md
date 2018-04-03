@@ -1,8 +1,5 @@
-# cobweb.js
-This is a simple [cobweb diagram](https://en.wikipedia.org/wiki/Cobweb_plot) generator in JavaScript, compatible with all modern browsers, and safely running without any plugins, etcetera.
-
-# Run it now
-It's currently available at [oak.ucc.nau.edu/jws8/cobweb/cobweb.html](http://oak.ucc.nau.edu/jws8/cobweb/cobweb.html), which should be fairly close to the latest version.
+# cobweb.html
+This is a simple economic cobweb diagram generator in JavaScript, compatible with all modern browsers, and safely running without any plugins, etcetera.
 
 # Directions from source
 1. Download at least the `cobweb.html`, `cobweb.js`, and `params.js` pages in the same folder.
@@ -16,4 +13,5 @@ It's currently available at [oak.ucc.nau.edu/jws8/cobweb/cobweb.html](http://oak
 * Auto-updating sliders (i.e., slide to change a value and the diagram is regenerated accordingly)
 
 # Copyright and License
-This has been made by Mark Haferkamp and is available under the MIT License. Please see the `LICENSE` file for details.
+This has been made originally by Mark Haferkamp and remaked by Kwanki Min for economic model. 
+This is available under the MIT License. Please see the `LICENSE` file for details.
