@@ -3,13 +3,16 @@
 
 var defaultParams={
     xmin:0,ymin:0,
-    xmax:1,ymax:1,
-    x1:0.51,
+    xmax:5,ymax:5,
+    x1:0.5,
     iters:100,
-    func:'4*x*(1-x)'
+    func:'3-0.2*Math.pow(x,2)',
+    func2:'3+Math.atan(1.3*x-3)',
+    func3:'(Math.tan(x-3)+3)/1.3'
 }
 
-// Get parameters from the URL's hash.
+// Get parameters from the URL's hash. ?) file:///storage/emulated/0/workspace/javascript/cobweb/cobweb9-1.html#{%22xmin%22:0,%22xmax%22:10,%22ymin%22:0,%22ymax%22:10,%22x1%22:0.1,%22iters%22:100,%22func%22:%225-0.9*x%22,%22func2%22:%221+1.1*x%22,%22func3%22:%22(x-1)/1.1%22}
+// hash는 url의 #부분을 의미.
 function getHashParams(){
     return JSON.parse(decodeURI(window.location.hash).slice(1));
 }
@@ -23,8 +26,9 @@ function setHashParams(params){
     window.onhashchange=oldFn;
 }
 
-window.onhashchange=loadParams;
-window.onhashchange();
+window.onhashchange=loadParams; //  url hash가 변하면 generate 함수 실행
+window.onhashchange(); 
+
 // Load parameters from URL hash
 function loadParams(){
     var params=JSON.parse(JSON.stringify(defaultParams));
@@ -41,10 +45,10 @@ function loadParams(){
     }
     log("Params are: "+JSON.stringify(params));
     mapToForm(params);
-    generate();
+    generate2(); //  cobweb.js의 generate 함수 실행
 }
 
-var formVars=['xmin','xmax','ymin','ymax','x1','iters','func'];
+var formVars=['xmin', 'xmax', 'ymin', 'ymax', 'x1', 'iters', 'func', 'func2', 'func3'];
 
 // retrieve form inputs and save to glob
 function formToGlob(){
@@ -103,3 +107,5 @@ function globToHash(){
         log("Error showing URL: "+e);
     }
 }
+
+// generate(); 
